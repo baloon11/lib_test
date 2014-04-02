@@ -1,0 +1,40 @@
+{% extends '1.html' %}
+{% load endless %}
+
+{% block title %}
+Список книг  
+{% endblock %}
+
+{% block content %}
+
+{% paginate book_list %}
+{%for book in book_list%} 
+
+
+<h4><a href="{{book.get_absolute_url}}">{{book.title}}</a></h4>
+<div align="center">
+
+{%if book.author.all.count > 1 %}
+<h5>Авторы:</h5>
+{%else%}
+<h5>Автор:</h5>
+{%endif%}
+
+
+ {% for author in book.author.all %}
+ {{author.first_last_name}}
+ <br>
+{%endfor%}
+
+
+</div>
+<div class="line"></div>
+{%endfor%}
+
+<br>
+<br>
+
+{% get_pages %}
+{{ pages.previous }} {{ pages.next }}
+
+{% endblock %}

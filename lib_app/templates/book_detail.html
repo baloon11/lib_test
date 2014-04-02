@@ -1,0 +1,33 @@
+{% extends '1.html' %}
+
+{% block title %}
+Информация о книге "{{book_detail.title}}"
+{% endblock %}
+
+{% block content %}
+
+<h4> Название: "{{book_detail.title}}" </h4>
+<h4>Номер книги в картотеке: {{book_detail.id}}</h4>
+<div align="center">
+
+{%if book_detail.author.all.count > 1 %}
+<h5>Авторы:</h5>
+{%else%}
+<h5>Автор:</h5>
+{%endif%}
+
+ {% for author in book_detail.author.all %}
+ {{author.first_last_name}}
+ <br>
+ 
+{%endfor%}
+
+<br>
+<a class=" btn btn-inverse" 
+href="{% url 'book_edit' book_id=book_detail.id %}"> 
+редактировать информацию о книге
+</a>
+
+</div>
+
+{% endblock %}

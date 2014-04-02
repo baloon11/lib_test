@@ -1,0 +1,33 @@
+.bodystyle{
+background:black;
+padding-top: 100px; 
+background-repeat: no-repeat;
+background-position:50% top; 
+background-attachment: fixed;
+color: #cccccc;}
+
+.bodystyle_book_list{background-image: url('book_list_img.jpg');}
+.bodystyle_book_detail{background-image: url('book_detail_img.jpg');}
+.bodystyle_book_edit{background-image: url('book_edit_img.jpg');}
+
+.text_position{
+padding-top: 100px;
+padding-right:1%;
+position:fixed;}
+
+.line {
+width: 80%;
+border-top: 1px solid #BBB395;
+padding-top:15px;
+margin: 7% 10% 25px 10%;
+}
+
+A:focus{outline:none;}
+
+A:link{color:#BBB395;}
+
+A:visited{color:#BBB395;}
+
+A:active{color:#BBB395; }
+
+A:hover{color:#CDC8B1;}

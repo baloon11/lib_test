@@ -1,0 +1,27 @@
+{% extends '1.html' %}
+
+{% block title %}
+ Редактирование информации о книге "{{book_title}}" 
+{% endblock %}
+
+{% block content %}
+
+
+<h4> Редактирование информации о книге "{{book_title}}"</h4>
+{%if all_is_right %}
+{{all_is_right}}
+{%else%}
+{%endif%}
+
+
+<div style=" padding-left: 80px ">
+<form action="" method="post">  {% csrf_token %}
+<table>
+{{form}}
+</table>
+<div style=" padding-right: 125px ">
+<input type="submit"  class="btn btn-inverse" value="Сохранить изменения">
+</div>
+</form>
+</div>
+{% endblock %}
