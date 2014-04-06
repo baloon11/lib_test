@@ -1,5 +1,5 @@
 # coding: utf-8
-from django.db import models
+from django.db import models #(for 3_branch)
 
 class Author(models.Model):    
     first_last_name = models.CharField(u'Фамилия Имя Отчество',max_length=1000) 
